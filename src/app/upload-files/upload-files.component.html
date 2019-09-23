@@ -1,0 +1,16 @@
+<div class="upload-wrapper-outside">
+  <div class="upload-main" (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
+    <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+      <i class="fa fa-cloud-upload"></i>
+    <h3 class="info">Wybierz zdjęcie lub przeciągnij tutaj</h3>
+  </div>
+</div>
+<div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
+
+</div>
+<div class="files-list" *ngFor="let file of files;let i= index">
+  <p> {{ file }} </p>
+  <button class="delete-file" (click)="deleteAttachment(i)">
+    <img src="https://image.flaticon.com/icons/svg/77/77679.svg">
+  </button>
+</div>
